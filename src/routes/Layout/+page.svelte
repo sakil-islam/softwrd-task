@@ -1,8 +1,10 @@
 <script>
+    import Nav from "../+page.svelte";
 </script>
 
 <main>
-  <div class="container m-auto grid md:grid-cols-12 grid-cols-4 grid-rows-6 gap-1">
+  <Nav />
+  <div class="container m-auto grid md:grid-cols-12 grid-cols-4 grid-rows-6 gap-1 mt-2">
     <div class="md:block md:tile md:bg-blue-400 md:col-span-2 md:row-start-1 md:row-end-4 hidden" />
     <div class="tile bg-red-400 col-span-4 row-start-1 row-end-4 md:row-end-6" />
     <div class="md:block md:tile md:bg-blue-400 md:col-span-6 md:row-start-1 md:row-end-3 hidden" />
