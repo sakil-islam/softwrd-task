@@ -11,7 +11,7 @@
     <div class="md:block md:tile md:bg-pink-200 md:text-white md:row-start-4 md:row-end-6 md:col-span-2 hidden" />
     <div class="md:block md:tile md:bg-pink-400 md:row-start-6 md:row-end-7 md:col-span-6 hidden">
     </div>
-    <div class="tile relative bg-yellow-100 md:row-start-3 row-start-4 row-end-7 col-span-4 body md:p-5 p-2">
+    <div class="tile relative bg-yellow-100 md:row-start-3 row-start-4 row-end-7 col-span-4 md:p-5 p-2 parent">
       <div class="outer-square">
         <div class="inner-circle">
           <div class="mountain" />
@@ -23,12 +23,10 @@
 </main>
 
 <style>
-  .body {
+  .parent {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    margin: 0;
   }
 
   .outer-square {
@@ -38,7 +36,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
 
   .inner-circle {
@@ -49,15 +46,14 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
   }
 
   .mountain {
-    width: 0;
-    height: 0;
     border-left: 90px solid transparent;
     border-right: 55px solid transparent;
     border-bottom: 80px solid #fe5f55;
-    position: relative;
+    position: absolute;
     bottom: 30px;
   }
 </style>
