@@ -6,6 +6,7 @@
   import GeoJSON from "ol/format/GeoJSON";
   import { Style, Fill } from "ol/style";
   import { fromLonLat } from "ol/proj";
+  import Nav from "../+page.svelte";
 
   let map;
 
@@ -43,7 +44,8 @@
   });
 </script>
 
-<div id="map" style="width: 100%; height: 100vh;"></div>
+<Nav />
+<div id="map" style="width: 100%; height: 100vh; margin-top: 10px" />
 
 <style>
   #map {
