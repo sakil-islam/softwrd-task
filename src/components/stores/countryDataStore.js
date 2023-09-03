@@ -6,6 +6,11 @@ export const top10CountriesStore = writable([]);
 fetch("https://restcountries.com/v3.1/all")
     .then((response) => response.json())
     .then((data) => {
+
+        const top20Countries = data.slice(0, 20);
+
+        countryDataStore.set(top20Countries);
+
         // Sort the data by population in descending order
         const sortedData = data
             .slice()
@@ -13,9 +18,7 @@ fetch("https://restcountries.com/v3.1/all")
 
         // Slice the sorted data to get the top 10 most populated countries
         const top10Countries = sortedData.slice(0, 10);
-        const top50Countries = sortedData.slice(0, 20);
 
         // Set the top 10 countries in the store
-        countryDataStore.set(top50Countries);
         top10CountriesStore.set(top10Countries);
     });

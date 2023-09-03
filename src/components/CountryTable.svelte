@@ -1,19 +1,18 @@
 <script>
   import {
-    top10CountriesStore,
     countryDataStore,
   } from "../components/stores/countryDataStore";
 
-  let top10Countries;
+  let Countries;
 
   $: {
-    top10Countries = $countryDataStore;
+    Countries = $countryDataStore;
   }
 </script>
 
 <main class="p-6">
-  <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg">
-    <table class="w-full table-auto">
+  <div class="mx-auto bg-white shadow-lg rounded-lg">
+    <table class="table-auto">
       <thead>
         <tr class="bg-gray-200">
           <th class="py-2 px-4">Flag</th>
@@ -26,19 +25,19 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Loop through the sampleData object to populate the table -->
-        {#each top10Countries as country (country)}
+        <!-- Loop through the Countries array of object to populate the table -->
+        {#each Countries as country (country)}
           <tr class="bg-white border-b-2">
-            <td class="py-2 px-4">{country.flag}</td>
-            <td class="py-2 px-4">{country.name.common}</td>
-            <td class="py-2 px-4">{country.cioc}</td>
-            <td class="py-2 px-4">{country.status}</td>
+            <td class="py-2 px-4">{country?.flag}</td>
+            <td class="py-2 px-4">{country?.name?.common}</td>
+            <td class="py-2 px-4">{country?.cioc}</td>
+            <td class="py-2 px-4">{country?.status}</td>
             <td class="py-2 px-4"
-              >{Object.keys(country.currencies).join(", ")}</td
+              >{Object.keys(country?.currencies).join(", ")}</td
             >
-            <td class="py-2 px-4">{country.population}</td>
+            <td class="py-2 px-4">{country?.population}</td>
             <td class="py-2 px-4"
-              >{Object.values(country.languages).join(", ")}</td
+              >{Object.values(country?.languages).join(", ")}</td
             >
           </tr>
         {/each}
